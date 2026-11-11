@@ -1,0 +1,234 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #080b20;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    padding: 35px 15px;
+}
+
+.stars-bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(#7777ff 1px, transparent 1px);
+    background-size: 80px 80px, 120px 120px;
+    background-position: 0 0, 40px 40px;
+    opacity: 0.35;
+    animation: starsMove 20s linear infinite;
+}
+
+@keyframes starsMove {
+    from { background-position: 0 0, 40px 40px; }
+    to { background-position: 0 400px, 40px 440px; }
+}
+
+header {
+    text-align: center;
+    margin-bottom: 35px;
+    z-index: 1;
+}
+
+header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(38px, 8vw, 65px);
+    font-weight: 900;
+    letter-spacing: 7px;
+    text-shadow: 0 0 20px #655bff;
+}
+
+header h1 span {
+    color: #8c7bff;
+}
+
+header p {
+    color: #9b9cbd;
+    font-size: 11px;
+    letter-spacing: 5px;
+    margin-top: 8px;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 850px;
+    z-index: 1;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 22px;
+    background: #171b3a;
+    border: 1px solid #393b75;
+    border-radius: 12px 12px 0 0;
+}
+
+.game-info div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.game-info small {
+    font-size: 10px;
+    color: #9b9cbd;
+    letter-spacing: 2px;
+}
+
+.game-info strong {
+    font-family: 'Orbitron', sans-serif;
+    color: #a99cff;
+    font-size: 23px;
+}
+
+.canvas-wrapper {
+    position: relative;
+    width: 100%;
+    background: #0c1029;
+    border: 1px solid #393b75;
+    border-top: none;
+    overflow: hidden;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 11, 32, 0.92);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.planet {
+    font-size: 65px;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 20px #8070ff);
+}
+
+.overlay h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(25px, 5vw, 38px);
+    color: #a99cff;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+.overlay p {
+    color: #c4c4dd;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.overlay .instructions {
+    color: #8587b5;
+    margin-bottom: 25px;
+}
+
+button {
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #655bff, #a45cff);
+    color: white;
+    padding: 15px 28px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px #806aff;
+}
+
+#finalScore {
+    font-family: 'Orbitron', sans-serif;
+    color: #ffe16a;
+    font-size: 40px;
+    margin: 10px 0 25px;
+}
+
+.controls-text {
+    text-align: center;
+    color: #8b8db5;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-top: 20px;
+}
+
+.footer-text {
+    text-align: center;
+    color: #655bff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    margin-top: 25px;
+}
+
+.mobile-controls {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 18px;
+}
+
+.mobile-controls button {
+    width: 75px;
+    height: 50px;
+    padding: 0;
+    font-size: 18px;
+    touch-action: none;
+}
+
+@media (min-width: 700px) {
+    .mobile-controls {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        padding: 25px 10px;
+    }
+
+    header {
+        margin-bottom: 22px;
+    }
+
+    header h1 {
+        letter-spacing: 4px;
+    }
+
+    .game-info {
+        padding: 12px;
+    }
+}
