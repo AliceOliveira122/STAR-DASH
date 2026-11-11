@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080b20">
+    <title>STAR DASH | Space Adventure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="stars-bg"></div>
+
+    <header>
+        <h1>STAR<span>DASH</span></h1>
+        <p>UMA AVENTURA PELO ESPAÇO</p>
+    </header>
+
+    <main class="game-container">
+
+        <div class="game-info">
+            <div>
+                <small>PONTUAÇÃO</small>
+                <strong id="score">0000</strong>
+            </div>
+
+            <div>
+                <small>RECORDE</small>
+                <strong id="best">0000</strong>
+            </div>
+        </div>
+
+        <div class="canvas-wrapper">
+            <canvas id="gameCanvas" width="800" height="500"></canvas>
+
+            <div id="startScreen" class="overlay">
+                <div class="planet">🪐</div>
+                <h2>STAR DASH</h2>
+                <p>Prepare-se para uma aventura espacial!</p>
+                <p class="instructions">
+                    Desvie dos meteoros e colete estrelas.
+                </p>
+                <button id="startBtn">INICIAR JOGO</button>
+            </div>
+
+            <div id="gameOverScreen" class="overlay hidden">
+                <div class="planet">💫</div>
+                <h2>FIM DE JOGO!</h2>
+                <p>Sua pontuação foi:</p>
+                <strong id="finalScore">0</strong>
+                <button id="restartBtn">JOGAR NOVAMENTE</button>
+            </div>
+        </div>
+
+        <div class="mobile-controls">
+            <button id="leftBtn">◀</button>
+            <button id="rightBtn">▶</button>
+        </div>
+
+        <p class="controls-text">
+            CONTROLES: ← → ou A / D
+        </p>
+
+        <p class="footer-text">
+            ✦ EXPLORE O UNIVERSO ✦
+        </p>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
